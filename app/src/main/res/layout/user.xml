@@ -49,6 +49,7 @@
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/key"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -87,10 +88,11 @@
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/keytext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="181 cm"
+                        android:text="-"
                         android:textColor="@color/whiteBodyColor"
                         android:textSize="50sp"
                         android:textStyle="bold" />
@@ -101,6 +103,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -139,10 +142,11 @@
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/weighttext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="87 kg"
+                        android:text="-"
                         android:textColor="@color/whiteBodyColor"
                         android:textSize="50sp"
                         android:textStyle="bold" />
@@ -153,6 +157,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/bmi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -191,10 +196,11 @@
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/bmitext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="25.1"
+                        android:text="-"
                         android:textColor="@color/whiteBodyColor"
                         android:textSize="50sp"
                         android:textStyle="bold" />

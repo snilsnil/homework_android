@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setDarkMode(getWindow());
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -117,11 +116,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             // Handle Manage menu item click
         } else if (id == R.id.nav_share) {
             // Handle Share menu item click
-        } else if (id == R.id.nav_dark_mode) {
-            // Toggle dark mode
-            DarkModePrefManager darkModePrefManager = new DarkModePrefManager(this);
-            darkModePrefManager.setDarkMode(!darkModePrefManager.isNightMode());
-            recreate();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -129,15 +123,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    public void setDarkMode(Window window) {
-        if (new DarkModePrefManager(this).isNightMode()) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            changeStatusBar(MODE_DARK, window);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            changeStatusBar(MODE_LIGHT, window);
-        }
-    }
 
     public void changeStatusBar(int mode, Window window) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

@@ -51,6 +51,7 @@
                 android:layout_marginTop="20dp">
 
                 <androidx.cardview.widget.CardView
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
@@ -74,31 +75,29 @@
                             android:layout_weight="1">
 
                             <TextView
+                                android:id="@+id/mainbmi"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Continue to \nWebdeveloper Course"
+                                android:layout_gravity="left"
+                                android:layout_marginLeft="30dp"
+                                android:text=""
                                 android:textColor="@color/whiteBodyColor"
                                 android:textStyle="bold"
-                                android:textSize="20sp"/>
+                                android:textSize="70sp"/>
 
                             <TextView
+                                android:id="@+id/mainstatus"
                                 android:layout_marginTop="15dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="60% Complete"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="30dp"
+                                android:text=""
                                 android:textColor="@color/whiteBodyColor"
                                 android:textStyle="bold"
-                                android:textSize="13sp"/>
+                                android:textSize="30sp"/>
 
                         </LinearLayout>
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="true"
-                            android:src="@drawable/hero"
-                            android:elevation="44dp"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
