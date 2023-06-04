@@ -80,7 +80,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="left"
                                 android:layout_marginLeft="30dp"
-                                android:text=""
+                                android:text="-"
                                 android:textColor="@color/whiteBodyColor"
                                 android:textStyle="bold"
                                 android:textSize="70sp"/>
@@ -92,7 +92,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right"
                                 android:layout_marginRight="30dp"
-                                android:text=""
+                                android:text="-"
                                 android:textColor="@color/whiteBodyColor"
                                 android:textStyle="bold"
                                 android:textSize="30sp"/>
@@ -114,15 +114,6 @@
                     android:layout_alignParentLeft="true"
                     android:text="암"
                     style="@style/viewParent.headerText"/>
-
-                <TextView
-                    android:layout_alignParentRight="true"
-                    style="@style/viewParent"
-                    android:text="See All"
-                    android:layout_centerVertical="true"
-                    android:textSize="@dimen/headerMoreTextSize"
-                    android:textColor="@color/primaryTextColor"
-                    android:textStyle="bold"/>
 
             </RelativeLayout>
 
@@ -153,14 +144,7 @@
                     android:text="혈압"
                     style="@style/viewParent.headerText"/>
 
-                <TextView
-                    android:layout_alignParentRight="true"
-                    style="@style/viewParent"
-                    android:text="See All"
-                    android:layout_centerVertical="true"
-                    android:textSize="@dimen/headerMoreTextSize"
-                    android:textColor="@color/primaryTextColor"
-                    android:textStyle="bold"/>
+
 
             </RelativeLayout>
 
