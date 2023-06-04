@@ -27,6 +27,9 @@
         <activity android:name="com.appsnipp.homedesign2.Uiam_txt" />
         <activity android:name="com.appsnipp.homedesign2.Chuejangam_txt" />
 
+        <activity android:name="com.appsnipp.homedesign2.Jeohyeolap_txt" />
+        <activity android:name="com.appsnipp.homedesign2.Gohyeolap_txt" />
+
     </application>
 
 </manifest>

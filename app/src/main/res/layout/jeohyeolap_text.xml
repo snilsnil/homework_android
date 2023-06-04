@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.appsnipp.homedesign2.MainActivity"
+    style="@style/parent.contentLayout">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="저혈압"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="저혈압이란 혈압계로 전완동맥의 혈압을 측정했을 때 혈압이 정상(수축기 혈압 120mmHg, 확장기 혈압이 80mmHg)보다 낮게 나오는 것을 의미한다. 일반적으로 혈압계로 측정한 결과 저혈압 범위(수축기 혈압이 100mmHg이하, 확장기 혈압이 60mmHg 이하인 경우)에 속한다 하더라도 별다른 이상 징후를 보이지 않는 경우가 대부분이므로 저혈압에 의한 특징적인 증상을 명확히 기술하는 것은 쉽지 않다.
+
+저혈압의 정도가 심한 경우에는 실신을 일으키기도 한다. 이와는 반대로 어지럽거나 기운이 없고, 쉽게 피곤한 증상 등이 나타날 때 흔히 빈혈이나 저혈압을 의심해 보는데, 검사를 시행해 보면 빈혈 징후가 발견되지 않고 측정한 혈압도 정상 범위에 있는 경우가 있다."
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+            <!--remove the below layout with recycler view, use card poplar courses as model for design-->
+
+
+
+
+            <!--remove the below layout with recycler view, use card poplar courses as model for design-->
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="원인"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="저혈압은 원인 및 형태에 따라 크게 3가지로 분류되며, 관련 증상도 이에 따라 다양한 형태를 보인다. \n\n1) 증후성 또는 속발성 저혈압: 여러 가지 형태의 심장질환이나 내분비질환 등의 기저 원인 질환이 있는 경우에 나타나는 저혈압이며, 기저질환과 관련된 다양한 증상으로 나타난다.\n\n2) 본태성 저혈압: 속발성과는 달리 심혈관계에 병적인 증상이 없고 명확한 근본 원인이 없는 저혈압이다. 일반적으로 저혈압이라고 하면 이러한 형태를 의미한다. 현기증, 두통, 팔다리의 저림, 전신 무기력, 불면 등을 호소하고, 서맥, 변비를 수반하는 경우도 있으며, 심하면 시력장애나 구역질, 실신 등의 증상들이 나타난다.\n\n3) 기립성 저혈압: 누워 있거나 혹은 앉아 있다가 갑자기 일어나는 경우와 같이 체위를 변환시키거나 장시간 동안 서 있는 경우에 혈액은 중력에 의해 자연적으로 하반신에 모이게 된다. 따라서 심장으로 들어가는 혈액량이 감소하게 되지만 이때 인체 내의 신경반사가 정상적으로 작동하면서 일정한 혈압이 유지될 수 있다. 이 혈압 유지 반사기구에 장애가 생기면서 발생하는 저혈압을 기립성 저혈압이라고 한다.\n\n기립성 저혈압 환자의 경우에는 그 증상이 비교적 명확하다. 전신 혈압이 낮아지면서 결과적으로 뇌나 심장으로 가는 혈류가 감소되고, 이로 인해 현기증이나 시력장애, 구역질, 때로는 실신 등의 증상이 나타난다. 아침에 잠자리에서 갑자기 일어날 때, 장시간 서 있을 때, 혹은 화장실에서 소변이나 대변을 보다가 갑자기 속이 메스껍거나 어지럽고 온몸에 힘이 빠지면서 앞이 캄캄해져 쓰러지게 되는 경우가 기립성 저혈압의 대표적인 예이다. 이런 경우 의식을 잃어버리는 기간은 대개 수 초 내지 수 분이고, 의식이 회복되면 다른 증상도 함께 사라지게 된다."
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="증상"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="가장 일반적인 저혈압의 증상은 현기증이나 두통이며, 전신이 무기력한 증상을 호소하는 경우가 많다. 또한 불면증상과 서맥(맥박이 서서히 뛰는 것), 변비를 수반하는 경우도 있으며, 심하면 시력장애나 구역질, 실신 등의 증상이 나타나기도 한다."
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

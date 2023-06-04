@@ -156,8 +156,8 @@
                 android:orientation="vertical"
                 android:layout_marginTop="20dp">
 
-                <include layout="@layout/ganam"/>
-                <include layout="@layout/uiam"/>
+                <include layout="@layout/jeohyeolap"/>
+                <include layout="@layout/gohyeolap"/>
 
             </LinearLayout>
 

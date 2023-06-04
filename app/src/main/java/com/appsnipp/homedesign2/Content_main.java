@@ -25,7 +25,7 @@ import java.util.Locale;
 
 public class Content_main  extends Fragment {
     TextView mainbmi, mainstatus;
-    LinearLayout ganam, uiam, chuejangam;
+    LinearLayout ganam, uiam, chuejangam, jeohyeolap, gohyeolap;
 
     DB db;
     SQLiteDatabase sql;
@@ -40,6 +40,9 @@ public class Content_main  extends Fragment {
         ganam=v.findViewById(R.id.ganam);
         uiam=v.findViewById(R.id.uiam);
         chuejangam=v.findViewById(R.id.chuejangam);
+
+        jeohyeolap=v.findViewById(R.id.jeohyeolap);
+        gohyeolap=v.findViewById(R.id.gohyeolap);
 
         db=new DB(getActivity());
         sql = db.getWritableDatabase();
@@ -86,6 +89,14 @@ public class Content_main  extends Fragment {
         });
         chuejangam.setOnClickListener(view ->{
             Intent intent = new Intent(getActivity(), Chuejangam_txt.class);
+            startActivity(intent);
+        });
+        jeohyeolap.setOnClickListener(view ->{
+            Intent intent = new Intent(getActivity(), Jeohyeolap_txt.class);
+            startActivity(intent);
+        });
+        gohyeolap.setOnClickListener(view ->{
+            Intent intent = new Intent(getActivity(), Gohyeolap_txt.class);
             startActivity(intent);
         });
 
