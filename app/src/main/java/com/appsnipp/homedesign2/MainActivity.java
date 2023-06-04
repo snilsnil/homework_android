@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FragmentTransaction tran;
     private User user;
     private Content_main content_main;
+    Streching streching;
 
     private BottomNavigationView bottomNavigationView;
 
@@ -41,6 +42,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 tran.replace(R.id.main_frame, content_main);
                 tran.commit();
                 return true; // 선택된 아이템을 표시하도록 true를 반환
+            } else if (id == R.id.navigationStreching) {
+                fm = getSupportFragmentManager();
+                tran = fm.beginTransaction();
+                tran.replace(R.id.main_frame, streching);
+                tran.commit();
+                return true; // 선택된 아이템을 표시하도록 true를 반환
             }
 
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -56,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         user = new User();
         content_main = new Content_main();
+        streching=new Streching();
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -102,6 +110,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fm = getSupportFragmentManager();
             tran = fm.beginTransaction();
             tran.replace(R.id.main_frame, content_main);
+            tran.commit();
+            return true; // 선택된 아이템을 표시하도록 true를 반환
+        } else if (id == R.id.navigationStreching) {
+            fm = getSupportFragmentManager();
+            tran = fm.beginTransaction();
+            tran.replace(R.id.main_frame, streching);
             tran.commit();
             return true; // 선택된 아이템을 표시하도록 true를 반환
         }
