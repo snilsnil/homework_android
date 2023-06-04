@@ -1,63 +1,51 @@
 package com.appsnipp.homedesign2;
 
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.Toolbar;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-
-import com.example.namespace.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import android.view.MenuItem;
+import com.example.namespace.R;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    FragmentManager fm;
-    FragmentTransaction tran;
-    User user = new User();
-    Content_main content_main = new Content_main();
+    private FragmentManager fm;
+    private FragmentTransaction tran;
+    private User user;
+    private Content_main content_main;
 
     private BottomNavigationView bottomNavigationView;
-    private static final int MODE_DARK = 0;
-    private static final int MODE_LIGHT = 1;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigationMyProfile:
-                    // Handle My Profile menu item click
-                    fm = getSupportFragmentManager();
-                    tran = fm.beginTransaction();
-                    tran.replace(R.id.main_frame, user);
-                    tran.commit();
-                    return true;
-                case R.id.navigationHome:
-                    // Handle Home menu item click
-                    fm = getSupportFragmentManager();
-                    tran = fm.beginTransaction();
-                    tran.replace(R.id.main_frame, content_main);
-                    tran.commit();
-                    return true;
-                case R.id.navigationStreching:
-                    // Handle Streching menu item click
-
-                    return true;
+            int id = item.getItemId();
+            if (id == R.id.navigationMyProfile) {
+                fm = getSupportFragmentManager();
+                tran = fm.beginTransaction();
+                tran.replace(R.id.main_frame, user);
+                tran.commit();
+                return true; // 선택된 아이템을 표시하도록 true를 반환
+            } else if (id == R.id.navigationHome) {
+                fm = getSupportFragmentManager();
+                tran = fm.beginTransaction();
+                tran.replace(R.id.main_frame, content_main);
+                tran.commit();
+                return true; // 선택된 아이템을 표시하도록 true를 반환
             }
-            return false;
+
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+            return false; // 선택된 아이템이 없으므로 false를 반환
         }
     };
 
@@ -65,6 +53,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        user = new User();
+        content_main = new Content_main();
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -75,13 +67,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView = findViewById(R.id.navigation); // 초기화
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
         layoutParams.setBehavior(new BottomNavigationBehavior());
 
+        // 아래 코드에서 오류가 발생할 수 있으므로 주석 처리합니다.
         bottomNavigationView.setSelectedItemId(R.id.navigationHome);
+
     }
 
     @Override
@@ -98,41 +92,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.navigationStreching) {
-            System.out.println("true");
+        if (id == R.id.navigationMyProfile) {
             fm = getSupportFragmentManager();
             tran = fm.beginTransaction();
             tran.replace(R.id.main_frame, user);
             tran.commit();
-        } else if (id == R.id.navigationMyProfile) {
-            System.out.println("true");
+            return true; // 선택된 아이템을 표시하도록 true를 반환
+        } else if (id == R.id.navigationHome) {
             fm = getSupportFragmentManager();
             tran = fm.beginTransaction();
             tran.replace(R.id.main_frame, content_main);
             tran.commit();
-        } else if (id == R.id.nav_slideshow) {
-            // Handle Slideshow menu item click
-        } else if (id == R.id.nav_manage) {
-            // Handle Manage menu item click
-        } else if (id == R.id.nav_share) {
-            // Handle Share menu item click
+            return true; // 선택된 아이템을 표시하도록 true를 반환
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-
-    public void changeStatusBar(int mode, Window window) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(getResources().getColor(R.color.contentStatusBar));
-
-            // Light mode
-            if (mode == MODE_LIGHT) {
-                window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-            }
-        }
+        return false; // 선택된 아이템이 없으므로 false를 반환
     }
 }

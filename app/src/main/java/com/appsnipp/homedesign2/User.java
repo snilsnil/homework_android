@@ -55,26 +55,6 @@ public class User extends Fragment {
 
         String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-
-        try {
-            calendar.setTime(sdf.parse(currentDate));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        while (true) {
-            // currentDate를 사용하여 DB에서 날짜 확인 및 처리
-            Cursor cursor = sql.rawQuery("SELECT day FROM user WHERE day='" + currentDate + "'", null);
-            if (cursor.getCount() > 0) {
-                break; // 날짜가 있는 경우 루프 종료
-            }
-            cursor.close();
-
-            calendar.add(Calendar.DAY_OF_YEAR, -1);
-            currentDate = sdf.format(calendar.getTime());
-        }
         Cursor cursor = sql.rawQuery("SELECT day FROM user", null);
         if (cursor.moveToFirst()) {
             String dayValue = cursor.getString(0);
@@ -105,86 +85,65 @@ public class User extends Fragment {
                 }
                 cbmi.close();
             }
+            cursor.close();
         }
 
-        key.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder dia = new AlertDialog.Builder(getActivity());
-                dia.setTitle("키를 입력하세요");
+        key.setOnClickListener(view -> {
+            AlertDialog.Builder dia = new AlertDialog.Builder(getActivity());
+            dia.setTitle("키를 입력하세요");
 
-                LayoutInflater inflater = requireActivity().getLayoutInflater();
-                View dialogView = inflater.inflate(R.layout.diakey, null);
-                dia.setView(dialogView);
+            LayoutInflater inflater1 = requireActivity().getLayoutInflater();
+            View dialogView = inflater1.inflate(R.layout.diakey, null);
+            dia.setView(dialogView);
 
-                EditText dkey = dialogView.findViewById(R.id.dkey);
+            EditText dkey = dialogView.findViewById(R.id.dkey);
 
-                dia.setPositiveButton("확인", (dialogInterface, i) -> {
-                    String rekey = dkey.getText().toString();
-                    if (TextUtils.isEmpty(rekey) && !isInteger(rekey)) {
-                        AlertDialog.Builder retryDia = new AlertDialog.Builder(getActivity());
-                        retryDia.setTitle("키를 올바르게 입력하세요");
-                        retryDia.setPositiveButton("확인", (dialogInterface1, i1) -> showKey());
-                        retryDia.show();
-                    } else {
-                        try{
-                            int value=Integer.parseInt(rekey);
-                            String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+            dia.setPositiveButton("확인", (dialogInterface, i) -> {
+                String rekey = dkey.getText().toString();
+                if (TextUtils.isEmpty(rekey) || !isInteger(rekey)) {
+                    AlertDialog.Builder retryDia = new AlertDialog.Builder(getActivity());
+                    retryDia.setTitle("키를 올바르게 입력하세요");
+                    retryDia.setPositiveButton("확인", (dialogInterface1, i1) -> showKey());
+                    retryDia.show();
+                } else {
+                    try {
+                        int value = Integer.parseInt(rekey);
+                        String currentDate1 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
-                            Calendar calendar = Calendar.getInstance();
-                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
-                            try {
-                                calendar.setTime(sdf.parse(currentDate));
-                            } catch (ParseException e) {
-                                e.printStackTrace();
-                            }
-
-                            while (true) {
-                                // currentDate를 사용하여 DB에서 날짜 확인 및 처리
-                                Cursor cursor = sql.rawQuery("SELECT day FROM user WHERE day='" + currentDate + "'", null);
-                                if (cursor.getCount() > 0) {
-                                    break; // 날짜가 있는 경우 루프 종료
-                                }
-                                cursor.close();
-
-                                calendar.add(Calendar.DAY_OF_YEAR, -1);
-                                currentDate = sdf.format(calendar.getTime());
-                            }
-                            Cursor cursor = sql.rawQuery("SELECT day FROM user", null);
-                            if (cursor.moveToFirst()) {
-                                String dayValue = cursor.getString(0);
-                                if (dayValue == null || dayValue.isEmpty()) {
-                                    sql.execSQL("INSERT INTO user VALUES ('" + currentDate + "'," + value + ", 0, 0);");
-                                } else {
-                                    sql.execSQL("UPDATE user SET k=" + value + " WHERE day='" + dayValue + "';");
-                                    cursor.close();
-
-                                    Cursor cweight = sql.rawQuery("SELECT weight FROM user", null);
-                                    if(cweight.moveToFirst()){
-                                        float weightValue = Float.parseFloat(cweight.getString(0));
-                                        if(weightValue!=0){
-                                            float bmi = weightValue / (((float) value/100) * ((float) value/100));
-                                            bmi = Math.round(bmi * 10) / 10.0f;
-                                            sql.execSQL("UPDATE user SET bmi=" + bmi + " WHERE day='" + dayValue + "';");
-                                            bmit.setText(String.valueOf(bmi));
-                                        }
-                                    }
-                                    cweight.close();
-                                }
+                        Cursor cursor1 = sql.rawQuery("SELECT day FROM user", null);
+                        if (cursor1.moveToFirst()) {
+                            String dayValue = cursor1.getString(0);
+                            if (dayValue == null || dayValue.isEmpty()) {
+                                sql.execSQL("INSERT INTO user VALUES ('" + currentDate1 + "'," + value + ", 0, 0);");
                             } else {
-                                sql.execSQL("INSERT INTO user VALUES ('" + currentDate + "'," + value + ", 0, 0);");
-                            }
-                            cursor.close();
-                        }catch(Exception e){
-                            e.printStackTrace();
-                        }
-                        keyt.setText(rekey + " cm");
-                    }
-                });
+                                sql.execSQL("UPDATE user SET k=" + value + " WHERE day='" + dayValue + "';");
+                                cursor1.close();
 
-                dia.show();
-            }
+                                Cursor cweight = sql.rawQuery("SELECT weight FROM user", null);
+                                if (cweight.moveToFirst()) {
+                                    float weightValue = Float.parseFloat(cweight.getString(0));
+                                    if (weightValue != 0) {
+                                        float bmi = weightValue / (((float) value / 100) * ((float) value / 100));
+                                        bmi = Math.round(bmi * 10) / 10.0f;
+                                        sql.execSQL("UPDATE user SET bmi=" + bmi + " WHERE day='" + dayValue + "';");
+                                        bmit.setText(String.valueOf(bmi));
+                                    }
+                                }
+                                cweight.close();
+                            }
+                        } else {
+                            sql.execSQL("INSERT INTO user VALUES ('" + currentDate1 + "'," + value + ", 0, 0);");
+                        }
+                        cursor1.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    keyt.setText(rekey + " cm");
+                }
+            });
+
+            dia.show();
         });
 
 
@@ -212,26 +171,7 @@ public class User extends Fragment {
                             int value=Integer.parseInt(rekey);
                             String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
-                            Calendar calendar = Calendar.getInstance();
-                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
-                            try {
-                                calendar.setTime(sdf.parse(currentDate));
-                            } catch (ParseException e) {
-                                e.printStackTrace();
-                            }
-
-                            while (true) {
-                                // currentDate를 사용하여 DB에서 날짜 확인 및 처리
-                                Cursor cursor = sql.rawQuery("SELECT day FROM user WHERE day='" + currentDate + "'", null);
-                                if (cursor.getCount() > 0) {
-                                    break; // 날짜가 있는 경우 루프 종료
-                                }
-                                cursor.close();
-
-                                calendar.add(Calendar.DAY_OF_YEAR, -1);
-                                currentDate = sdf.format(calendar.getTime());
-                            }
                             Cursor cursor = sql.rawQuery("SELECT day FROM user", null);
                             if (cursor.moveToFirst()) {
                                 String dayValue = cursor.getString(0);
@@ -300,26 +240,7 @@ public class User extends Fragment {
                         int value=Integer.parseInt(rekey);
                         String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
-                        Calendar calendar = Calendar.getInstance();
-                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
-                        try {
-                            calendar.setTime(sdf.parse(currentDate));
-                        } catch (ParseException e) {
-                            e.printStackTrace();
-                        }
-
-                        while (true) {
-                            // currentDate를 사용하여 DB에서 날짜 확인 및 처리
-                            Cursor cursor = sql.rawQuery("SELECT day FROM user WHERE day='" + currentDate + "'", null);
-                            if (cursor.getCount() > 0) {
-                                break; // 날짜가 있는 경우 루프 종료
-                            }
-                            cursor.close();
-
-                            calendar.add(Calendar.DAY_OF_YEAR, -1);
-                            currentDate = sdf.format(calendar.getTime());
-                        }
                         Cursor cursor = sql.rawQuery("SELECT day FROM user", null);
                         if (cursor.moveToFirst()) {
                             String dayValue = cursor.getString(0);
@@ -382,26 +303,6 @@ public class User extends Fragment {
                         int value=Integer.parseInt(rekey);
                         String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
-                        Calendar calendar = Calendar.getInstance();
-                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-
-                        try {
-                            calendar.setTime(sdf.parse(currentDate));
-                        } catch (ParseException e) {
-                            e.printStackTrace();
-                        }
-
-                        while (true) {
-                            // currentDate를 사용하여 DB에서 날짜 확인 및 처리
-                            Cursor cursor = sql.rawQuery("SELECT day FROM user WHERE day='" + currentDate + "'", null);
-                            if (cursor.getCount() > 0) {
-                                break; // 날짜가 있는 경우 루프 종료
-                            }
-                            cursor.close();
-
-                            calendar.add(Calendar.DAY_OF_YEAR, -1);
-                            currentDate = sdf.format(calendar.getTime());
-                        }
                         Cursor cursor = sql.rawQuery("SELECT day FROM user", null);
                         if (cursor.moveToFirst()) {
                             String dayValue = cursor.getString(0);

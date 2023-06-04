@@ -41,26 +41,7 @@ public class Content_main  extends Fragment {
 
         String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
-        try {
-            calendar.setTime(sdf.parse(currentDate));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        while (true) {
-            // currentDate를 사용하여 DB에서 날짜 확인 및 처리
-            Cursor cursor = sql.rawQuery("SELECT day FROM user WHERE day='" + currentDate + "'", null);
-            if (cursor.getCount() > 0) {
-                break; // 날짜가 있는 경우 루프 종료
-            }
-            cursor.close();
-
-            calendar.add(Calendar.DAY_OF_YEAR, -1);
-            currentDate = sdf.format(calendar.getTime());
-        }
 
         Cursor cursor = sql.rawQuery("SELECT day FROM user", null);
         if (cursor.moveToFirst()) {
