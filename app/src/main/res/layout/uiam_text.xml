@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.appsnipp.homedesign2.MainActivity"
+    style="@style/parent.contentLayout">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="위암"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="원칙적으로 위에 생기는 모든 암을 일컫는 말이지만, 주로 위점막의 선세포(샘세포)에서 발생한 위선암(adenocarcinoma)을 말합니다. 위선암(adenocarcinoma)은 현미경에서 관찰되는 암세포의 모양에 따라 다시 여러 종류로 분류됩니다. 위선암 외에도 위에는 드물게 림프조직에서 발생하는 림프종(lymphoma), 위의 간질세포에서 발생하는 간질성 종양(gastrointestinal tumor), 비상피성 세포에서 유래하는 악성 종양인 육종(sarcoma), 그리고 호르몬을 분비하는 신경내분비암(neuroendocrine tumor) 등이 발생하기도 합니다."
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+            <!--remove the below layout with recycler view, use card poplar courses as model for design-->
+
+
+
+
+            <!--remove the below layout with recycler view, use card poplar courses as model for design-->
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="종류"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="· 위선암(adenocarcinoma) \n위선암은 위점막의 상피세포에서 발생한 것이며 현미경에서 관찰되는 모양에 따라 다시 여러 종류로 나눌 수 있습니다. 일반적으로 위암 세포들이 샘조직 고유의 형태를 많이 유지하는 경우 분화도가 좋다고 하며 조직의 형태와 세포 모양을 알아보기 힘든 경우 분화도가 나쁘다고 합니다. 분화도가 나쁜 경우 림프절 전이가 많고 암이 많이 진행된 경우가 많습니다.\n위선암은 점막에서 성장하기 시작하여 크기가 커지면서 위벽을 침범하며, 흔히 위 주변 림프절(림프샘)에 암세포들이 옮아가서 자랍니다. 암이 더 진행되면 부근의 간, 췌장, 십이지장, 식도 등을 침범하거나, 암세포가 혈관이나 림프관을 타고 간, 폐, 복막 등 멀리 떨어진 장기로 옮겨 가 전이될 수도 있습니다"
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="위험성"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="위암은 어느 한가지 요인에 의해서 발생하기 보다는 여러 요인들이 복합적으로 작용해 발생 합니다. 현재 알려진 바로는 헬리코박터 파일로리균, 위암 관련 질병, 식생활, 흡연, 음주, 그리고 가족력 등과 관련이 있는데, 가족력에 있어서는 유전적 요인과 환경적 요인이 동시에 작용하는 것으로 알려져 있습니다."
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

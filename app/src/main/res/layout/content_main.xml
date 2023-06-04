@@ -127,7 +127,7 @@
 
                 <include layout="@layout/ganam"/>
                 <include layout="@layout/uiam"/>
-                <include layout="@layout/chechangam"/>
+                <include layout="@layout/chuejangam"/>
 
 
             </LinearLayout>

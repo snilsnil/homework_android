@@ -23,6 +23,9 @@
 
         <activity android:name="com.appsnipp.homedesign2.Neckstreching" />
         <activity android:name="com.appsnipp.homedesign2.Waiststreching" />
+        <activity android:name="com.appsnipp.homedesign2.Ganam_txt" />
+        <activity android:name="com.appsnipp.homedesign2.Uiam_txt" />
+        <activity android:name="com.appsnipp.homedesign2.Chuejangam_txt" />
 
     </application>
 

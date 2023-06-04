@@ -1,6 +1,7 @@
 package com.appsnipp.homedesign2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -13,18 +14,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.namespace.R;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
 public class Content_main  extends Fragment {
     TextView mainbmi, mainstatus;
+    LinearLayout ganam, uiam, chuejangam;
 
     DB db;
     SQLiteDatabase sql;
@@ -35,6 +36,10 @@ public class Content_main  extends Fragment {
 
         mainbmi=v.findViewById(R.id.mainbmi);
         mainstatus=v.findViewById(R.id.mainstatus);
+
+        ganam=v.findViewById(R.id.ganam);
+        uiam=v.findViewById(R.id.uiam);
+        chuejangam=v.findViewById(R.id.chuejangam);
 
         db=new DB(getActivity());
         sql = db.getWritableDatabase();
@@ -67,6 +72,25 @@ public class Content_main  extends Fragment {
                 cbmi.close();
             }
         }
+
+
+        ganam.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity(), Ganam_txt.class);
+            startActivity(intent);
+        });
+
+        uiam.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity(), Uiam_txt.class);
+            startActivity(intent);
+
+        });
+        chuejangam.setOnClickListener(view ->{
+            Intent intent = new Intent(getActivity(), Chuejangam_txt.class);
+            startActivity(intent);
+        });
+
+
+
         return v;
     }
     public class DB extends SQLiteOpenHelper {

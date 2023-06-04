@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.appsnipp.homedesign2.MainActivity"
+    style="@style/parent.contentLayout">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="췌장암"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="췌장암이란 췌장에 생긴 암세포로 이루어진 종괴(덩이)입니다. 췌장암의 90% 이상은 췌관의 샘세포에 암이 생긴 선암(腺癌)입니다. \n\n췌장의 종양에는 여러 종류가 있습니다. 가장 흔한 것은 양성인 낭성종양(囊性腫瘍, 낭종)으로 장액성과 점액성 낭성종양, 췌관내 유두상 점액종양, 고형 가(假)유두상 종양, 림프 상피성 낭종 및 낭종성 기형종 같은 간엽성(間葉性) 종양이 이에 속하고, 악성 종양으로는 외분비 종양인 췌관 선암종과 선방세포 암종 외에 신경내분비 종양도 있습니다. 낭성 종양 가운데도 악성이 있으며, 당초엔 양성이던 것이 악성으로 바뀌기도 합니다"
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+            <!--remove the below layout with recycler view, use card poplar courses as model for design-->
+
+
+
+
+            <!--remove the below layout with recycler view, use card poplar courses as model for design-->
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="종류"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="췌장에 생기는 종양은 수술적 절제로 치료가 가능한 양성 종양에서부터 예후(豫後, prognosis, 병의 상태가 앞으로 어떨지에 대한 전망, 혹은 병 치료 후의 경과)가 매우 불량한 악성 종양 즉 암에 이르기까지 유형이 다양합니다. 그 중 가장 흔한 낭성종양(囊性腫瘍), 이른바 물혹에도 여러 종류가 있는데, 대부분은 악성 아닌 양성이지만 간혹 처음부터 악성이거나 진단 당시에는 양성이었다가 이후 악성으로 바뀌는 것도 있습니다. 낭성종양에는 장액성(漿液性)과 점액성(粘液性) 낭성종양, 췌관내 유두상(乳頭狀) 점액종양, 고형 가(假)유두상 종양, 그리고 림프 상피성(上皮性) 낭종과 낭종성 기형종(畸形腫, teratoma) 같은 종양이 포함됩니다. 악성 종양으로는 췌장 외분비종양인 췌관선암종, 선방세포암종, 그리고 신경내분비종양 등이 있습니다. \n\n· 췌장 낭성 종양\n췌장 종양의 약 1%을 차지하는 췌장 낭성 종양은 최근 그 발생 빈도가 증가하고 있습니다. 증상이 없고, 있다고 해도 비특이적이어서 다른 병으로 방사선검사를 하다가 우연히 발견되는 수가 많습니다. 참고로, 생물학이나 의학에서 ‘특이적(specific)’이라는 말은 어떤 작용이나 반응이 특정한 대상이나 조건에서만 선택적으로 일어난다는 뜻입니다. 따라서 비특이적 증상(non-specific symptom)이란 특정 질환의 증상이라고 볼 수 없는 것을 말합니다.\n\n- 장액성 낭성종양(serous cystadenoma)\n여성에게 많이 발견되고, 암으로 진행될 가능성이 매우 낮습니다.\n\n- 점액성 낭성종양(mucinous cystic neoplasm)\n여성에게 흔하며 췌장의 꼬리 부분에 많이 생깁니다. 악성화의 경향이 있으므로 정확히 진단하는 것이 중요합니다.\n\n- 췌관내 유두상 점액종양(intraductal papillary mucinous neoplasm, IPMN)\n양성부터 악성까지 다양한 소견을 보이고, 악성인 경우에도 일반적인 췌관 선암종보다 예후가 좋은 경우가 많습니다.\n\n- 고형 가(假)유두상 종양(solid pseudopapillary tumor)\n췌장 낭성종양의 5% 이내이며, 대부분 젊은 여성에게 생깁니다. 악성화 가능성을 배제할 수 없으므로 수술 치료를 우선적으로 고려합니다.\n\n· 악성 췌장 종양\n- 췌관 선암종(pancreatic ductal adenocarcinoma)\n가장 흔한 유형의 악성 종양으로, 췌장 종양의 85~90%가량을 차지합니다. 60~80대 남자에게 잘 발생하며, 일부는 담도(膽道)나 십이지장의 폐색과 복통을 유발할 수 있습니다.\n\n- 선방세포암종(acinar cell carcinoma)\n췌장 외분비 종양의 1~2% 이내로 드문 종양이며, 중 노년의 남자에게 많이 생깁니다.\n\n- 신경내분비종양(neuroendocrine tumor)\n발생 빈도가 인구 10만 명당 1명 이하인 아주 드문 종류로, 대부분은 호르몬을 분비하지 않는 비기능성 종양입니다. 호르몬을 생성하는 기능성 신경내분비 종양일 경우, 그 호르몬의 종류에 따라 인슐린종(腫), 가스트린종, 글루카곤종 등으로 나눕니다. 가스트린(gastrin)은 위산 분비를 촉진하는 호르몬입니다.\n\n발생 위치에 따라 증상에 좀 차이가 나고, 수술 방법도 달라질 수 있습니다. 드물게는 십이지장 유두부(乳頭部)에서 발생하는 유두부암, 또는 담도암이 췌장암으로 오인되는 경우도 있습니다. 십이지장 유두부는 담관과 췌관이 십이지장으로 열리는 부분입니다."
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="위험성"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="췌장암은 다른 어떤 암보다도 조기 진단이 중요합니다. 그럼에도 실제로는 조기 진단이 어려운 까닭은 췌장암의 발생 기전을 정확히 알지 못하기 때문입니다. 환경적 요인과 유전적 요인이 복합적으로 관여하는 것으로 알려지고, 몇 가지 위험요인이 밝혀졌거나 추정되고 있는 정도입니다.
+
+유전적 요인으로는 K-Ras(케이라스)라는 유전자의 이상이 특히 주목됩니다. 췌장암의 90% 이상에서 이 유전자의 변형이 발견되었습니다. 환경적 요인 가운데는 흡연이 발암에 상당한 영향을 미치는 것으로 알려졌으며, 위암이나 대장암과 비교했을 때 이 밖에도 몇 가지 환경적인 요인이 관여할 것으로 생각됩니다. 특히 육류 소비와 음식물의 지방 함량이 췌장암 발생과 상관관계가 있다는 보고가 있으나 확실치는 않습니다. 과일, 채소, 식이섬유소, 비타민 C 등이 췌장암 예방 효과가 있다는 보고 역시 명확히 입증되지는 않았습니다.
+
+· 흡연
+췌장암의 발생과 관련이 깊은 발암물질은 담배입니다. 흡연을 할 경우에는 췌장암의 상대 위험도가 2~5배로 증가하기 때문입니다. 담배는 현재까지 알려진 가장 중요한 위험인자입니다. 다른 장기에 흡연과 관련하여 악성 종양(두경부암, 폐암, 방광암 등)이 생겼을 경우에 췌장암의 발생이 증가한다는 보고도 있습니다. 췌장암의 3분의 1가량이 흡연으로 인한 것이며, 흡연자는 비흡연자에 비해 췌장암 발생 위험도가 1.7배라고 합니다. 담배를 끊었을 경우, 10년 이상이 지나야 췌장암에 걸릴 위험이 담배를 피우지 않는 사람만큼 낮아집니다.
+
+· 비만
+비만인 경우 췌장암 발생 위험도가 증가한다고 보고되었으나 연구 결과들이 일치하지 않아서 단정하기는 어렵습니다.
+
+· 당뇨
+당뇨는 췌장암의 원인이 될 수도 있지만, 반대로 췌장암과 연관된 2차적인 내분비 기능 장애가 당뇨를 일으키는 것으로 보기도 합니다. 앞의 견해를 뒷받침하는 것으로는 5년 이상 당뇨를 앓고 있는 환자들은 췌장암 발생률이 증가한다는 등의 연구 보고가 있습니다. 인과관계를 이와 반대로 보는 견해의 근거는, 췌장암을 진단 받기 2년 전쯤에 흔히 당뇨가 발생하고, 그런 환자가 수술을 통해 암을 제거하면 3개월 이내에 당뇨가 호전되기도 한다는 점입니다. 어느 견해도 무시할 수 없는 만큼, 당뇨를 장기간 앓고 있는 사람과 가족력 없이 갑자기 당뇨진단을 받은 사람은 일단 췌장암 검사를 받을 것을 권합니다.
+
+인슐린 비의존성 당뇨(제2형 당뇨)이 있는 경우, 췌장암 발생 위험은 1.8배로 높아집니다. 우리나라 췌장암 환자의 당뇨 유병률은 28~30%로 일반인(7~9%)의 3배 이상입니다(유병률이란 어떤 시점에 일정한 지역 혹은 집단의 인구 중 특정 질환의 환자가 차지하는 비율을 말합니다).
+
+· 만성 췌장염
+만성 췌장염은 정상적이던 췌장 세포들이 염증을 앓는 가운데 섬유조직으로 변해가면서 췌장 전체가 매우 딱딱해져 기능을 잃게 되는 병으로, 처음부터 만성형으로 발병하기도 하고 반복적인 급성 염증이 만성으로 이어지기도 합니다. 서구의 경우 10만 명당 5~10명의 빈도로 발생하며, 일본은 더 높은 빈도를 보입니다. 만성 췌장염의 가장 중요한 원인은 음주입니다.
+
+만성 췌장염이 있으면 췌장암의 위험이 증가하므로 이것을 췌장암의 원인 질환으로 봅니다. 만성 췌장염과 췌장암을 구별하기가 매우 어려운 경우도 있는데, 췌장염은 생명에 지장이 없으나 암은 치명적인 병이므로 철저한 감별 진단이 필요합니다. 또한, 매우 드물지만 유전성 췌장염도 췌장암으로 발전할 가능성이 있습니다.
+
+· 가족성 췌장암
+직계 가족 가운데 50세 이전에 췌장암에 걸린 사람이 하나 이상 있거나, 발병한 나이와 상관없이 직계 가족 가운데 췌장암 환자가 둘 이상 있다면 가족성 췌장암이 아닌지 의심해야 합니다. 의사와 상의하여 정기적으로 검진을 받는 것이 필요합니다.
+
+가족성 췌장암에서 특별한 유전적 이상이 확인된 바는 아직 없지만, 유전적 소인과 유전자 이상도 췌장암 발생에 관여하는 것으로 의심됩니다. 다른 악성 종양 없이 한 가계에서 3대에 걸쳐 췌장암이 발생한 사례가 있습니다. 또, 유전적 소인이 췌장암 원인의 약 10% 정도를 차지한다고 알려졌습니다. 유전적 소인에 대해 밝혀진 것은 많지 않으나, K-Ras(케이라스)라는 유전자의 변형이 췌장암의 90% 이상에서 발견되었다는 사실은 주목할 만합니다. 이는 모든 암종에서 나타나는 유전자 이상 가운데 가장 빈도가 높은 것입니다.
+
+· 나이
+나이는 췌장암뿐 아니라 다른 암들의 발생에도 중요한 인자로 알려져 있습니다. 췌장암 발생률은 높은 연령대에서 크게 증가합니다. 일반적으로 췌장암 발생의 평균 나이는 65세로, 30세 이전에 췌장암이 발생하는 경우는 매우 드물며 50세 이전에도 많지 않습니다. 50세 이전에 췌장암이 발생했거나, 가족 중에 그 같은 환자가 있다면 가족성 췌장암일 가능성이 크므로 철저한 조사가 필요합니다.
+
+· 음주
+이전의 연구 보고들에서는 과음이 췌장암 발생 위험을 키운다는 주장이 많았으나, 많은 음주자가 흡연을 즐긴다는 점을 고려하면 술보다는 흡연의 영향이 컸을 수 있습니다. 최근에는 음주와 췌장암 발생 사이엔 유의미한 관계가 없다는 보고가 많습니다. 그 관계는 또 인종과 성별에 따라 다르고, 술의 종류나 음주량, 술을 마신 기간에 따라서도 다릅니다. 그러나 술을 많이 마시는 것은 췌장염의 주요 원인이기 때문에 췌장암 발생과 적어도 간접적으로는 관련됩니다.
+
+· 식이
+최근 들어 식이(食餌) 또는 식이 습관이 췌장암 발생에 영향을 미친다는 연구 결과가 많이 나오고 있습니다. 여러 역학 연구에서 육류나 지방, 탄수화물의 과도한 섭취, 과다한 열량과 높은 체질량지수(body mass index, BMI)가 췌장암의 위험도를 높이는 반면 신선한 과일과 채소류, 비타민 등은 위험도를 낮추는 경향이 있다고 보고하고 있는데, 연구 결과들이 일치하지 않아서 확언하기는 어렵습니다. 체질량지수(body mass index, BMI)란 키와 몸무게를 이용하여 비만의 정도를 측정하는 것으로, 몸무게(kg)를 키(m)의 제곱으로 나눈 값입니다.
+
+· 화학물질
+각종 용매제, 휘발유와 그 관련 물질, 살충제(DDT)와 베타나프틸아민(β-naphthylamine), 벤지딘(benzidine) 등의 화학물질도 췌장암의 위험인자로 알려졌습니다. 이 모두가 의심의 여지 없이 입증되지는 않았으나, 여러 연구에서 화학물질이 췌장암을 유발할 수 있는 것으로 나타났습니다. 석탄에서 발생하는 가스에 많이 노출된 사람은 췌장암 발생률이 매우 높습니다. 탄소 연료인 코크스를 취급하는 사람들에게도 대장암과 췌장암이 많고, 석탄이나 타르 관련 작업자, 금속 제조나 알루미늄 제분 종사자, 기계를 수리하거나 자르거나 깎는 작업을 하면서 관련 유체(流體)에 많이 노출되는 사람들 역시 췌장암 발생 위험성이 높다는 보고들이 있습니다. 아울러 방사선 노출 또한 위험인자로 생각됩니다.
+
+예방법
+아직은 확립된 췌장암 예방 수칙이 없으므로 일상생활에서 위험요인들을 피하는 것이 최선입니다.
+"
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

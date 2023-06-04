@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.appsnipp.homedesign2.MainActivity"
+    style="@style/parent.contentLayout">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="간암"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="간에서 일차적으로 발생한, 즉 원발성(原發性)의 악성 종양을 의미합니다. 일반인들은 다른 기관에서 간으로 전이된 암도 흔히 간암이라고 부르지만, 엄밀하게는 원발성의 암만을 가리킵니다. 병리학적(조직적)으로 원발성 간암에는 간세포암종과 담관상피암종, 간모세포종, 혈관육종 등 다양한 종류가 있으며, 이중 간세포암종과 담관상피암종이 대부분을 차지합니다."
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+            <!--remove the below layout with recycler view, use card poplar courses as model for design-->
+
+
+
+
+            <!--remove the below layout with recycler view, use card poplar courses as model for design-->
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="종류"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="병리학적으로 원발성 간암에는 간세포암종(肝細胞癌腫), 담관상피암종(膽管上皮癌腫), 간모세포종(肝母細胞腫), 혈관육종(血管肉腫) 등 다양한 종류가 있으며, 크게는 간세포에서 기원한 간세포암종과 담관세포에서 기원한 담관세포암종으로 나뉩니다. 간세포암종은 우리나라 원발성 간암의 약 74.5%를 차지하고, 그다음이 담관세포암종이며, 그 외의 암종은 드뭅니다. 여기서는 간세포암종을 주로 다루겠습니다. 편의상 이후의 설명에서 '간암'은 별도의 규정이 없을 경우 간세포암종을 뜻합니다."
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bottomborder"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="위험성"
+                    android:textSize="30sp"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="20sp"
+                    android:text="간암은 발생과 관련된 위험인자가 다른 암들보다 잘 알려져 있습니다. 만성 B형 또는 C형 간염,(모든 원인의) 간경변증, 알코올성 간질환, 비만이나 당뇨와 관련된 지방성 간질환, 그리고 아프리카 등지에서는 특정 곰팡이류가 만들어내는 발암물질 아플라톡신 B(aflatoxin B) 따위가 간암의 위험을 증가시킵니다. 2014년 대한간암학회에서 발표된 자료에 따르면 간암 환자의 72%가 B형 간염바이러스(HBV, hepatitis B virus), 12%가 C형 간염바이러스(HCV, hepatitis C virus)의 영향을 받았으며, 9%가 알코올, 4%가 기타 원인과 연관이 있었습니다. B형 간염바이러스 만성 보유자는 대부분이 그 바이러스를 지닌 어머니에게서 출생 시에 감염되며, 그들의 반수 이상이 만성 간염이나 흔히 간경화라고 부르는 간경변증으로 진행합니다. 해마다 간경변증 환자의 1~5%에서 간암이 발생합니다. 간암은 간경변증이 심할수록, 연령이 높을수록 잘 발생하며, 남자에게 더 흔합니다.그러나 이러한 위험요소들에 노출되었다고 해서 모두 암환자가 되는 것은 아닙니다. 이 요소들이 길게는 수십 년에 이르는 오랜 세월 동안 유전자의 돌연변이를 일으키고 그것이 축적되어 암이 생기므로, 평소에 위험요인들을 피하면서 간암 예방에 유의하는 것이 중요합니다.
+"
+                    style="@style/viewParent.headerText"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
